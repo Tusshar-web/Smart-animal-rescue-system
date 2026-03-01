@@ -100,7 +100,7 @@ Mahi Sharma
 
 Gagan Upadhyaya
 
-Boril Gogoi
+Bornil Gogoi
 
 Snehasish Das
 
