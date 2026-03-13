@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   let selectedRole = "user";
+  showFields("user"); // show fields for default role on load
 
   const roleButtons = document.querySelectorAll(".role-btn");
   const extraFields = document.getElementById("extraFields");
@@ -17,14 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showFields(role) {
     extraFields.innerHTML = "";
-
+    if (role === "user") {
+      extraFields.innerHTML = `
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+      `;
+    }
     if (role === "volunteer") {
       extraFields.innerHTML = `
         <input type="email" id="email" placeholder="Email" required>
         <input type="password" id="password" placeholder="Password" required>
       `;
     }
-
     if (role === "admin") {
       extraFields.innerHTML = `
         <input type="email" id="email" placeholder="Admin Email" required>
