@@ -40,7 +40,7 @@ function render() {
 
     // Fill pending preview with real report data
     document.getElementById("pendingPreview").innerHTML = `
-      <p><span>Animal:</span> ${report.animal || "—"}</p>
+      <p><span>Animal:</span> ${report.animalType || "—"}</p>
       <p><span>Location:</span> ${report.location || "—"}</p>
       <p><span>Urgency:</span> ${report.urgency || "—"}</p>
     `;
@@ -50,18 +50,10 @@ function render() {
     return;
   }
 
-  if (report.status === "Rejected") {
-    showBanner("rejected");
-    rejectedState.style.display = "block";
-    return;
-  }
-
-  if (report.status === "Accepted") {
+  if (report.status === "in-progress" || report.status === "rescued") {
     showBanner("accepted");
     acceptedState.style.display = "block";
-
-    // Populate summary table with real report data
-    document.getElementById("summaryAnimal").textContent   = report.animal   || "—";
+    document.getElementById("summaryAnimal").textContent = report.animalType || "—";
     document.getElementById("summaryLocation").textContent = report.location || "—";
 
     const urgencyEl = document.getElementById("summaryUrgency");
