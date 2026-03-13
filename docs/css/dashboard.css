@@ -87,12 +87,6 @@ body {
   border-radius: 5px; 
 }
 
-/* Optional: make hover still work on active */
-/*.top-nav .nav-links li.active a:hover {
-  /* background-color: #ff4d4d; bright red hover */
-  /* color: #fff;               keep text white or change if you want */
-/*}
-
 /* Main Content */
 .main-content {
   padding: 20px;
